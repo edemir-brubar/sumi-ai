@@ -1,24 +1,28 @@
-# sumi-ai/main.py
-import os
+# sumi-ai/main.py (VERSÃO UNIVERSAL IMAP)
+import imaplib
+import email
 
-def iniciar_sumi():
-    """Inicializa o motor de inteligência artificial SUMI"""
-    print("SUMI AI: Ativando processamento seguro e efêmero...")
-    return True
+def conectar_email_universal(servidor, usuario, senha):
+    try:
+        print(f"SUMI: Tentando conexão universal com {servidor}...")
+        mail = imaplib.IMAP4_SSL(servidor)
+        mail.login(usuario, senha)
+        print("SUMI: Conectado com sucesso!")
+        return mail
+    except Exception as e:
+        print(f"Erro na conexão: {e}")
+        return None
 
-def extrair_emails_relevantes():
-    """Simula a captura de e-mails para processamento"""
-    # Futuramente aqui entrarão as chaves da Gislene, Bruna e Bárbara
-    return ["Proposta Brubar", "Aviso USP", "Simulado FGV"]
-
-def gerar_resumo_ia(emails):
-    """O motor SUMI transforma e-mails em resumos curtos"""
-    print("SUMI: Transformando e-mails em insights...")
-    return "Relatório SUMI: 3 pendências identificadas. Detalhes enviados ao WhatsApp."
+def buscar_ultimos_emails(mail):
+    # O SUMI seleciona a caixa de entrada
+    mail.select("inbox")
+    # Busca e-mails não lidos ou recentes
+    result, data = mail.search(None, 'ALL')
+    ids = data[0].split()
+    print(f"SUMI: {len(ids)} e-mails encontrados para resumir.")
+    return ids
 
 if __name__ == "__main__":
-    if iniciar_sumi():
-        lista = extrair_emails_relevantes()
-        resultado = gerar_resumo_ia(lista)
-        print(f"SUCESSO: {resultado}")
-        print("Dados originais deletados da memória temporária.")
+    # Exemplo de como o SUMI funcionará para qualquer operadora
+    # usuario_exemplo = {"servidor": "imap.hostgator.com.br", "email": "contato@empresa.com"}
+    print("SUMI AI: Pronto para processar qualquer operadora via IMAP.")
