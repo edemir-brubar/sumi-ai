@@ -8,22 +8,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .bg-glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); }
+        .bg-glass { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); }
         .gradient-text { background: linear-gradient(90deg, #4F46E5, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* TRUQUE PARA O LOGO FICAR GRANDE MESMO COM MARGENS NA IMAGEM */
-        .logo-container { height: 120px; display: flex; align-items: center; overflow: visible; }
-        .logo-img { height: 280%; width: auto; object-fit: contain; transform: translateX(-15%); }
+        /* AJUSTE PARA LOGO COM ESPAÇO VAZIO NA IMAGEM */
+        .logo-wrapper { 
+            height: 80px; /* Altura da barra */
+            display: flex; 
+            align-items: center; 
+            overflow: hidden; /* Corta o excesso vazio da imagem */
+        }
+        .logo-img-fix { 
+            height: 250px; /* Força o tamanho gigante */
+            width: auto; 
+            margin-bottom: -110px; /* Remove o vácuo debaixo do logo */
+            margin-top: -20px;    /* Ajusta a centralização vertical */
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="bg-[#FDFDFF] text-slate-900">
 
     <nav class="fixed top-0 w-full z-50 bg-glass border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-0 flex justify-between items-center h-24">
-            <div class="logo-container">
-                <img src="logo-sumi.png" alt="SUMI Logo" class="logo-img">
+            <div class="logo-wrapper">
+                <img src="logo-sumi.png" alt="SUMI Logo" class="logo-img-fix">
             </div>
-            <a href="#assinar" class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-indigo-800 transition-all shadow-lg shadow-indigo-100 uppercase">Assinar agora</a>
+            <a href="#assinar" class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-indigo-800 transition-all shadow-lg shadow-indigo-100 uppercase tracking-wider">Assinar agora</a>
         </div>
     </nav>
 
@@ -50,8 +61,8 @@
     </section>
 
     <footer class="py-20 text-center text-slate-400 text-sm border-t border-slate-50">
-        <div class="h-20 flex justify-center items-center overflow-hidden mb-6">
-            <img src="logo-sumi.png" alt="SUMI Logo" class="h-[250%] w-auto opacity-90">
+        <div class="flex justify-center mb-6 overflow-hidden h-16">
+            <img src="logo-sumi.png" alt="SUMI Logo" class="h-48 w-auto opacity-90 -mb-24">
         </div>
         <p class="font-bold mb-2 uppercase tracking-tighter text-indigo-600">SUMI - Brubar Brasil</p>
         <p>© 2026 • Inteligência em Produtividade</p>
