@@ -16,14 +16,8 @@
 
     <nav class="fixed top-0 w-full z-50 bg-glass border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 flex items-center justify-center transform -rotate-3">
-                    <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40 8H8C5.8 8 4.02 9.8 4.02 12L4 36C4 38.2 5.8 40 8 40H40C42.2 40 44 38.2 44 36V12C44 9.8 42.2 8 40 8Z" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4 12L24 26L44 12" stroke="#9333EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <span class="text-3xl font-extrabold tracking-tighter text-slate-800 italic text-indigo-600">SUMI</span>
+            <div class="flex items-center">
+                <img src="logo-sumi.png" alt="SUMI Logo" class="h-12 w-auto">
             </div>
             <a href="#assinar" class="bg-indigo-600 text-white px-7 py-2.5 rounded-full font-bold text-sm hover:bg-indigo-800 transition-all">ASSINAR AGORA</a>
         </div>
@@ -33,33 +27,26 @@
         <div class="max-w-5xl mx-auto">
             <span class="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Tecnologia Brubar Brasil</span>
             <h1 class="text-6xl md:text-8xl font-extrabold text-slate-900 mb-8 tracking-tight leading-[1.1]">
-                Faça o caos dos e-mails <span class="gradient-text uppercase text-indigo-600 font-black">sumir</span>.
+                Faça o caos dos e-mails <span class="gradient-text uppercase font-black">sumir</span>.
             </h1>
             <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto italic">
                 Receba resumos inteligentes de qualquer e-mail direto no seu WhatsApp. <b>Rápido, seguro e essencial.</b>
             </p>
             
             <div id="assinar" class="bg-white p-8 rounded-[2.5rem] shadow-2xl shadow-indigo-100 border border-slate-100 max-w-xl mx-auto">
-                <form id="sumiForm" class="flex flex-col gap-4 text-left">
-                    <h3 class="text-lg font-bold text-slate-700 text-center mb-2">Inicie sua experiência hoje</h3>
-                    
-                    <input type="email" name="email" id="emailInput" required placeholder="Seu e-mail corporativo" class="w-full p-5 rounded-2xl bg-slate-50 border-none outline-none focus:ring-2 focus:ring-indigo-500 transition text-lg text-slate-700">
-                    
-                    <button type="submit" id="btnSubmit" class="w-full bg-indigo-600 text-white font-bold py-5 rounded-2xl text-xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all flex justify-center items-center gap-2">
-                        <span>Ativar meu SUMI</span>
+                <form id="sumiForm" class="flex flex-col gap-4">
+                    <h3 class="text-lg font-bold text-slate-700 text-center mb-2 text-indigo-600">Inicie sua experiência hoje</h3>
+                    <input type="email" name="email" id="emailInput" required placeholder="Seu e-mail corporativo" class="w-full p-5 rounded-2xl bg-slate-50 border-none outline-none focus:ring-2 focus:ring-indigo-500 transition text-lg text-slate-700 text-center">
+                    <button type="submit" id="btnSubmit" class="w-full bg-indigo-600 text-white font-bold py-5 rounded-2xl text-xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all">
+                        Ativar meu SUMI
                     </button>
                 </form>
-                
-                <div class="flex justify-center gap-6 mt-6 text-slate-400 text-[10px] font-bold uppercase tracking-widest">
-                    <span>✓ Any Carrier</span>
-                    <span>✓ OAuth 2.0 Security</span>
-                    <span>✓ Zero Fee</span>
-                </div>
             </div>
         </div>
     </section>
 
     <footer class="py-16 text-center text-slate-400 text-sm">
+        <img src="logo-sumi.png" alt="SUMI Logo" class="h-8 w-auto mx-auto mb-4 opacity-50">
         <p class="font-bold mb-2 uppercase tracking-tighter text-indigo-600">SUMI - Brubar Brasil</p>
         <p>© 2026 • Inteligência em Produtividade</p>
     </footer>
@@ -83,13 +70,13 @@
                 });
 
                 if (response.ok) {
-                    alert('🎉 Sucesso! O cadastro de ' + document.getElementById('emailInput').value + ' foi recebido. Em breve você receberá as instruções de ativação da Brubar Brasil!');
+                    alert('🎉 Sucesso! Cadastro recebido. Em breve você receberá as instruções no seu e-mail!');
                     form.reset();
                 } else {
-                    alert('Ops! Algo deu errado. Tente novamente em instantes.');
+                    alert('Ops! Algo deu errado.');
                 }
             } catch (error) {
-                alert('Erro de conexão. Verifique sua internet.');
+                alert('Erro de conexão.');
             } finally {
                 btn.disabled = false;
                 btn.innerHTML = "Ativar meu SUMI";
