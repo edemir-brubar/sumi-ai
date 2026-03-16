@@ -1,14 +1,14 @@
-# 🚀 Briefing 360 - IA Executive Summary
+# 🚀 SUMI - IA Executive Summary
 
-O **Briefing 360** é uma solução inteligente projetada para profissionais que precisam de agilidade. Ele consolida caixas de entrada (Gmail/Outlook) e gera resumos executivos automáticos direto no canal de preferência do usuário.
+O **SUMI** é um assistente de inteligência artificial da **Brubar Brasil** focado em produtividade executiva. Ele faz o caos do e-mail **sumir**, entregando resumos inteligentes direto no WhatsApp.
 
-## 🎯 Objetivo do Negócio
-Transformar o caos do e-mail em decisões rápidas, economizando até 1h por dia de triagem manual.
+## 🎯 Proposta de Valor
+Recupere sua produtividade. O SUMI filtra, entende e resume suas caixas de entrada para que você foque apenas no que exige sua decisão.
 
 ## 🛠️ Tecnologias
-- **Engine:** Gemini 3 Flash IA (2026)
+- **Engine:** Gemini 3 Flash IA
 - **Back-end:** Python
-- **Integrações:** Gmail API / Microsoft Graph API / WhatsApp (Evolution API)
+- **Privacidade:** Stateless Processing (Memória Volátil)
 
-## 🔒 Segurança e Privacidade
-Código privado focado em processamento seguro de dados sensíveis da Brubar Brasil.
+## 🔒 Segurança e LGPD
+O SUMI foi projetado com privacidade em primeiro lugar. Não armazenamos o conteúdo dos seus e-mails. O processamento é criptografado e os dados originais são descartados imediatamente após o envio do resumo.
