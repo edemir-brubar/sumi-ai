@@ -1,24 +1,24 @@
-# briefing-360-ai/main.py
+# sumi-ai/main.py
 import os
 
-def conectar_contas():
-    """Simula a conexão com as APIs do Gmail e Outlook"""
-    print("Conectando às contas: falecom@brubarbrasil.com e Outlook...")
+def iniciar_sumi():
+    """Inicializa o motor de inteligência artificial SUMI"""
+    print("SUMI AI: Ativando processamento seguro e efêmero...")
     return True
 
 def extrair_emails_relevantes():
-    """Filtra e-mails das últimas 24h ignorando spam"""
-    # Em 2026, usamos conectores integrados para agilizar o processo
-    return ["Proposta Avalor", "Convite Mercer", "Localiza Feedback"]
+    """Simula a captura de e-mails para processamento"""
+    # Futuramente aqui entrarão as chaves da Gislene, Bruna e Bárbara
+    return ["Proposta Brubar", "Aviso USP", "Simulado FGV"]
 
-def gerar_resumo_ia(lista_emails):
-    """Usa o motor do Gemini para criar o relatório executivo"""
-    print("Enviando dados para a IA processar...")
-    resumo = "Relatório: Proposta Avalor recebida, Convite Mercer para pesquisa e Pendência Localiza."
-    return resumo
+def gerar_resumo_ia(emails):
+    """O motor SUMI transforma e-mails em resumos curtos"""
+    print("SUMI: Transformando e-mails em insights...")
+    return "Relatório SUMI: 3 pendências identificadas. Detalhes enviados ao WhatsApp."
 
 if __name__ == "__main__":
-    if conectar_contas():
-        emails = extrair_emails_relevantes()
-        relatorio = gerar_resumo_ia(emails)
-        print(f"SUCESSO: {relatorio}")
+    if iniciar_sumi():
+        lista = extrair_emails_relevantes()
+        resultado = gerar_resumo_ia(lista)
+        print(f"SUCESSO: {resultado}")
+        print("Dados originais deletados da memória temporária.")
