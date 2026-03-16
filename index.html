@@ -10,23 +10,8 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .bg-glass { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); }
         .gradient-text { background: linear-gradient(90deg, #4F46E5, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* AJUSTE DEFINITIVO: FOCO NO LOGO E FUNDO TRANSPARENTE */
-        .logo-box { 
-            height: 60px; /* Altura da área do logo */
-            width: 220px; /* Largura da área do logo */
-            display: flex; 
-            align-items: center; 
-            justify-content: flex-start;
-            overflow: hidden; /* Corta o que sobrar da imagem */
-        }
-        .logo-final { 
-            height: 180px; /* Zoom na imagem para compensar o vazio */
-            width: auto; 
-            object-fit: contain;
-            mix-blend-mode: multiply; /* Remove o fundo branco */
-            transform: translateY(-5px); /* Ajuste fino de centralização */
-        }
+        .logo-box { height: 60px; width: 220px; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; }
+        .logo-final { height: 180px; width: auto; object-fit: contain; mix-blend-mode: multiply; transform: translateY(-5px); }
     </style>
 </head>
 <body class="bg-[#FDFDFF] text-slate-900">
@@ -36,15 +21,15 @@
             <div class="logo-box">
                 <img src="logo-sumi.png" alt="SUMI Logo" class="logo-final">
             </div>
-            <a href="#assinar" class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-indigo-800 transition-all shadow-lg shadow-indigo-100 uppercase tracking-widest">Assinar agora</a>
+            <a href="#precos" class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-indigo-800 transition-all shadow-lg shadow-indigo-100 uppercase tracking-widest">Ver Planos</a>
         </div>
     </nav>
 
-    <section class="pt-64 pb-24 px-6 text-center">
+    <section class="pt-64 pb-20 px-6 text-center">
         <div class="max-w-5xl mx-auto">
             <span class="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8 inline-block italic">Tecnologia Brubar Brasil</span>
             <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1]">
-                Faça o caos dos e-mails <span class="gradient-text uppercase">sumir</span>.
+                Faça o caos dos e-mails <span class="gradient-text uppercase font-extrabold">sumir</span>.
             </h1>
             <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
                 Receba resumos inteligentes de qualquer e-mail direto no seu WhatsApp. <br><b>Rápido, seguro e essencial.</b>
@@ -52,17 +37,53 @@
             
             <div id="assinar" class="bg-white p-10 rounded-[3rem] shadow-2xl shadow-indigo-100 border border-slate-50 max-w-xl mx-auto">
                 <form id="sumiForm" class="flex flex-col gap-4">
-                    <h3 class="text-xl font-bold text-slate-800 text-center mb-2">Inicie sua experiência hoje</h3>
+                    <h3 class="text-xl font-bold text-slate-800 text-center mb-2 italic">Experimente Grátis por 24h</h3>
                     <input type="email" name="email" id="emailInput" required placeholder="Seu melhor e-mail corporativo" class="w-full p-6 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-indigo-500 outline-none transition text-lg text-slate-700 text-center font-semibold">
                     <button type="submit" id="btnSubmit" class="w-full bg-indigo-600 text-white font-black py-6 rounded-2xl text-2xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all active:scale-95">
-                        Ativar meu SUMI
+                        Iniciar Teste de 1 Dia
                     </button>
+                    <p class="text-slate-400 text-xs text-center mt-2 uppercase font-bold tracking-tighter">Após o teste, apenas R$ 19,90/mês. Cancele quando quiser.</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center text-slate-400 text-sm border-t border-slate-50">
+    <section id="precos" class="py-24 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-black text-center mb-16 text-slate-800 uppercase tracking-tighter italic">Planos de Assinatura</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border-2 border-indigo-500 relative transform hover:scale-105 transition">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Mais Popular</div>
+                    <h3 class="text-2xl font-black mb-2">Plano Starter</h3>
+                    <p class="text-slate-400 mb-6 font-bold uppercase text-xs tracking-tighter italic">Até 2 contas de e-mail</p>
+                    <div class="text-5xl font-black mb-6 tracking-tighter italic">R$ 19,90<span class="text-lg text-slate-400 font-bold">/mês</span></div>
+                    <ul class="text-left space-y-4 mb-8 text-slate-600 font-medium">
+                        <li class="flex items-center gap-2 italic font-bold text-indigo-600 uppercase text-xs tracking-tighter">✓ 24 horas de teste grátis</li>
+                        <li class="flex items-center gap-2 italic font-bold uppercase text-xs tracking-tighter">✓ Resumos Ilimitados</li>
+                        <li class="flex items-center gap-2 italic font-bold uppercase text-xs tracking-tighter">✓ Entrega via WhatsApp</li>
+                        <li class="flex items-center gap-2 italic font-bold uppercase text-xs tracking-tighter">✓ Criptografia OAuth 2.0</li>
+                    </ul>
+                    <a href="#assinar" class="block w-full text-center bg-indigo-600 text-white py-4 rounded-xl font-black hover:bg-indigo-700 transition">Assinar Agora</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-slate-100 transform hover:scale-105 transition">
+                    <h3 class="text-2xl font-black mb-2">Plano Pro</h3>
+                    <p class="text-slate-400 mb-6 font-bold uppercase text-xs tracking-tighter italic">Contas ilimitadas</p>
+                    <div class="text-5xl font-black mb-6 tracking-tighter italic">R$ 49,90<span class="text-lg text-slate-400 font-bold">/mês</span></div>
+                    <ul class="text-left space-y-4 mb-8 text-slate-600 font-medium">
+                        <li class="flex items-center gap-2 italic font-bold uppercase text-xs tracking-tighter">✓ Sem limite de domínios</li>
+                        <li class="flex items-center gap-2 italic font-bold uppercase text-xs tracking-tighter">✓ Prioridade no processamento</li>
+                        <li class="flex items-center gap-2 italic font-bold uppercase text-xs tracking-tighter">✓ Suporte Premium 24/7</li>
+                        <li class="flex items-center gap-2 italic font-bold uppercase text-xs tracking-tighter">✓ Resumos via WhatsApp e Telegram</li>
+                    </ul>
+                    <a href="#assinar" class="block w-full text-center bg-slate-800 text-white py-4 rounded-xl font-black hover:bg-black transition">Assinar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center text-slate-400 text-sm">
         <div class="flex justify-center mb-6 overflow-hidden h-14">
             <img src="logo-sumi.png" alt="SUMI Logo" class="h-40 w-auto opacity-80 mix-blend-multiply -mt-12">
         </div>
@@ -86,7 +107,7 @@
                     headers: { 'Accept': 'application/json' }
                 });
                 if (response.ok) {
-                    alert('🎉 Sucesso! A Brubar recebeu seu cadastro. Verifique sua caixa de entrada!');
+                    alert('🎉 Sucesso! Seu teste de 24h foi ativado. Verifique seu e-mail para as instruções!');
                     form.reset();
                 } else {
                     alert('Ops! Algo deu errado.');
@@ -95,7 +116,7 @@
                 alert('Erro de conexão.');
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = "Ativar meu SUMI";
+                btn.innerHTML = "Iniciar Teste de 1 Dia";
             }
         });
     </script>
