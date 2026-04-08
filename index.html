@@ -21,6 +21,10 @@
             <div class="logo-box">
                 <img src="logo-sumi.png" alt="SUMI Logo" class="logo-final">
             </div>
+            <div class="hidden md:flex gap-8 font-bold text-sm uppercase tracking-widest text-slate-400">
+                <a href="#como-funciona" class="hover:text-indigo-600 transition">Como Funciona</a>
+                <a href="#precos" class="hover:text-indigo-600 transition">Planos</a>
+            </div>
             <a href="https://pay.kiwify.com.br/ffFEghA" target="_blank" class="bg-indigo-600 text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-indigo-800 transition-all shadow-lg shadow-indigo-100 uppercase tracking-widest">Assinar agora</a>
         </div>
     </nav>
@@ -38,7 +42,7 @@
             <div id="assinar" class="bg-white p-10 rounded-[3rem] shadow-2xl shadow-indigo-100 border border-slate-50 max-w-xl mx-auto">
                 <form id="sumiForm" class="flex flex-col gap-4">
                     <h3 class="text-xl font-bold text-slate-800 text-center mb-2 italic text-indigo-600 uppercase tracking-tighter">Ative seu Teste de 24 horas</h3>
-                    <input type="email" name="email" id="emailInput" required placeholder="E-mail corporativo ou pessoal" class="w-full p-6 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-indigo-500 outline-none transition text-lg text-slate-700 text-center font-semibold">
+                    <input type="email" name="email" id="emailInput" required placeholder="Seu melhor e-mail" class="w-full p-6 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-indigo-500 outline-none transition text-lg text-slate-700 text-center font-semibold">
                     <button type="submit" id="btnSubmit" class="w-full bg-indigo-600 text-white font-black py-6 rounded-2xl text-2xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all active:scale-95">
                         Começar Agora (Grátis)
                     </button>
@@ -48,7 +52,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-white">
+    <section id="como-funciona" class="py-24 bg-white">
         <div class="max-w-6xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-black uppercase tracking-tighter italic mb-16">Por que o SUMI é a sua única escolha?</h2>
             <div class="grid md:grid-cols-3 gap-12">
@@ -102,11 +106,13 @@
             btn.innerHTML = "Iniciando Teste...";
             const formData = new FormData(form);
             try {
+                // Envia para o Formspree
                 await fetch('https://formspree.io/f/xvzwwlgr', {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
+                // Redireciona para o checkout Standard de teste
                 window.location.href = "https://pay.kiwify.com.br/K3y9LSh";
             } catch (error) {
                 window.location.href = "https://pay.kiwify.com.br/K3y9LSh";
