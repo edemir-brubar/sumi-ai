@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUMI | Inteligência que faz o excesso de e-mails sumir</title>
+    <title>SUMI | Inteligência Executiva de Elite</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .bg-glass { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); }
         .gradient-text { background: linear-gradient(90deg, #4F46E5, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .logo-box { height: 60px; width: 220px; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; }
-        .logo-final { height: 180px; width: auto; object-fit: contain; mix-blend-mode: multiply; transform: translateY(-5px); }
+        /* Ajuste para a logo horizontal ficar perfeita no topo */
+        .logo-box { height: 60px; display: flex; align-items: center; }
+        .logo-final { height: 45px; width: auto; object-fit: contain; }
     </style>
 </head>
 <body class="bg-[#FDFDFF] text-slate-900">
@@ -19,7 +21,7 @@
     <nav class="fixed top-0 w-full z-50 bg-glass border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 py-0 flex justify-between items-center h-24">
             <div class="logo-box">
-                <img src="logo-sumi.png" alt="SUMI Logo" class="logo-final">
+                <img src="logo-sumi-nova.png" alt="SUMI Logo" class="logo-final">
             </div>
             <div class="hidden md:flex gap-8 font-bold text-sm uppercase tracking-widest text-slate-400">
                 <a href="#como-funciona" class="hover:text-indigo-600 transition">Como Funciona</a>
@@ -36,7 +38,7 @@
                 Pare de ler e-mails. <br><span class="gradient-text uppercase">Comece a decidir.</span>
             </h1>
             <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium leading-relaxed italic">
-                A IA que filtra o ruído e entrega apenas o que importa, na frequência que você escolher, direto no seu WhatsApp.
+                A IA que filtra o ruído e entrega apenas o que importa, direto no seu WhatsApp.
             </p>
             
             <div id="assinar" class="bg-white p-10 rounded-[3rem] shadow-2xl shadow-indigo-100 border border-slate-50 max-w-xl mx-auto">
@@ -106,13 +108,11 @@
             btn.innerHTML = "Iniciando Teste...";
             const formData = new FormData(form);
             try {
-                // Envia para o Formspree
                 await fetch('https://formspree.io/f/xvzwwlgr', {
                     method: 'POST',
                     body: formData,
                     headers: { 'Accept': 'application/json' }
                 });
-                // Redireciona para o checkout Standard de teste
                 window.location.href = "https://pay.kiwify.com.br/K3y9LSh";
             } catch (error) {
                 window.location.href = "https://pay.kiwify.com.br/K3y9LSh";
