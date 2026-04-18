@@ -12,40 +12,40 @@
         .bg-glass { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); }
         .gradient-text { background: linear-gradient(90deg, #4F46E5, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* LOGO DO TOPO - CENTRALIZADA E IMPOSTA */
-        .nav-container { height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .logo-final { height: 120px; width: auto; object-fit: contain; }
+        /* HEADER - SIMETRIA TOTAL */
+        .nav-container { height: 200px; display: flex; align-items: center; justify-content: center; width: 100%; }
+        .logo-final { height: 140px; width: auto; object-fit: contain; }
         
-        /* ÍCONES DOS PLANOS - VAZADOS E ELEGANTES */
-        .plan-header-icon { height: 100px; width: auto; margin: 0 auto 1rem; display: block; }
+        /* ÍCONES DOS PLANOS - LIMPOS E VAZADOS */
+        .plan-header-icon { height: 100px; width: auto; margin: 0 auto 2rem; display: block; }
 
         @media (max-width: 768px) {
-            .logo-final { height: 90px; }
-            .nav-container { height: 130px; }
+            .logo-final { height: 100px; }
+            .nav-container { height: 160px; }
         }
     </style>
 </head>
 <body class="bg-[#FDFDFF] text-slate-900">
 
-    <nav class="fixed top-0 w-full z-50 bg-glass border-b border-slate-100">
+    <nav class="fixed top-0 w-full z-50 bg-glass border-b border-slate-50">
         <div class="max-w-6xl mx-auto nav-container">
             <img src="logonova.png" alt="SUMI Logo" class="logo-final">
         </div>
     </nav>
 
-    <section class="pt-64 pb-20 px-6 text-center">
+    <section class="pt-96 pb-20 px-6 text-center">
         <div class="max-w-5xl mx-auto">
-            <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1]">
+            <h1 class="text-6xl md:text-8xl font-black text-slate-900 mb-6 tracking-tight leading-[1.1]">
                 Pare de ler e-mails. <br><span class="gradient-text uppercase">Comece a decidir.</span>
             </h1>
-            <p class="text-xl text-slate-500 mb-12 max-w-2xl mx-auto font-medium italic">
+            <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto font-medium italic">
                 A IA que filtra o ruído e entrega apenas o que importa, direto no seu WhatsApp.
             </p>
             
             <div id="assinar" class="bg-white p-10 rounded-[3rem] shadow-2xl shadow-indigo-100 border border-slate-50 max-w-xl mx-auto">
                 <form id="sumiForm" class="flex flex-col gap-4">
                     <input type="email" name="email" id="emailInput" required placeholder="Seu melhor e-mail" class="w-full p-6 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-indigo-500 outline-none transition text-lg text-slate-700 text-center font-semibold">
-                    <button type="submit" id="btnSubmit" class="w-full bg-indigo-600 text-white font-black py-6 rounded-2xl text-2xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all uppercase">
+                    <button type="submit" id="btnSubmit" class="w-full bg-indigo-600 text-white font-black py-6 rounded-2xl text-2xl hover:bg-indigo-700 shadow-xl shadow-indigo-200 transition-all uppercase tracking-[0.2em]">
                         Começar Agora
                     </button>
                 </form>
@@ -55,39 +55,39 @@
 
     <section id="precos" class="py-24 bg-slate-50">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-black text-center mb-16 text-slate-400 uppercase tracking-[0.2em]">Escolha sua agilidade</h2>
-            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-20 text-slate-300 uppercase tracking-[0.4em]">Escolha sua agilidade</h2>
+            <div class="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
                 
-                <div class="bg-white p-12 rounded-[3rem] shadow-xl border border-slate-100 text-center hover:shadow-2xl transition-all">
-                    <img src="iconesumi.png" class="plan-header-icon" style="filter: brightness(0.2);" alt="Standard Icon">
-                    <h3 class="text-xl font-bold mb-2 uppercase tracking-widest">Plano Standard</h3>
-                    <div class="text-5xl font-black mb-8">R$ 19,90<span class="text-lg text-slate-300">/mês</span></div>
-                    <ul class="text-left space-y-4 mb-10 text-indigo-600 font-bold uppercase text-[10px] tracking-widest">
+                <div class="bg-white p-14 rounded-[3.5rem] shadow-xl border border-slate-100 text-center hover:shadow-2xl transition-all">
+                    <img src="iconesumi.png" class="plan-header-icon" alt="Standard Icon" style="filter: grayscale(1) brightness(0.5);">
+                    <h3 class="text-xl font-extrabold mb-2 uppercase tracking-[0.3em] text-slate-800">Plano Standard</h3>
+                    <div class="text-5xl font-black mb-10">R$ 19,90<span class="text-lg text-slate-300">/mês</span></div>
+                    <ul class="text-center space-y-4 mb-12 text-indigo-600 font-bold uppercase text-[11px] tracking-widest">
                         <li>✓ Resumo a cada 1 hora</li>
-                        <li>✓ Alertas no WhatsApp</li>
+                        <li>✓ Notificações no WhatsApp</li>
                     </ul>
-                    <a href="https://pay.kiwify.com.br/K3y9LSh" target="_blank" class="block w-full bg-indigo-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm">Assinar Standard</a>
+                    <a href="https://pay.kiwify.com.br/K3y9LSh" target="_blank" class="block w-full bg-indigo-600 text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-sm">Assinar Standard</a>
                 </div>
 
-                <div class="bg-white p-12 rounded-[3rem] shadow-2xl border-2 border-indigo-600 text-center hover:scale-105 transition-all relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-6 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Mais Escolhido</div>
+                <div class="bg-white p-14 rounded-[3.5rem] shadow-2xl border-4 border-indigo-600 text-center hover:scale-105 transition-all relative">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-10 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">Exclusivo</div>
                     <img src="iconesumi.png" class="plan-header-icon" alt="Premium Icon">
-                    <h3 class="text-xl font-bold mb-2 uppercase tracking-widest text-indigo-600">Plano Premium</h3>
-                    <div class="text-5xl font-black mb-8">R$ 29,90<span class="text-lg text-slate-300">/mês</span></div>
-                    <ul class="text-left space-y-4 mb-10 text-indigo-600 font-bold uppercase text-[10px] tracking-widest">
-                        <li>✓ Tempo Real (30 min)</li>
-                        <li>✓ Suporte VIP Brubar</li>
+                    <h3 class="text-xl font-extrabold mb-2 uppercase tracking-[0.3em] text-indigo-600">Plano Premium</h3>
+                    <div class="text-5xl font-black mb-10">R$ 29,90<span class="text-lg text-slate-300">/mês</span></div>
+                    <ul class="text-center space-y-4 mb-12 text-indigo-600 font-bold uppercase text-[11px] tracking-widest">
+                        <li>✓ Tempo Real (30 Minutos)</li>
+                        <li>✓ Suporte Executivo VIP</li>
                     </ul>
-                    <a href="https://pay.kiwify.com.br/ffFEghA" target="_blank" class="block w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm">Assinar Premium</a>
+                    <a href="https://pay.kiwify.com.br/ffFEghA" target="_blank" class="block w-full bg-slate-900 text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-sm">Assinar Premium</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center">
-        <img src="iconesumi.png" class="h-8 mx-auto mb-4 opacity-20 grayscale" alt="Footer Logo">
-        <p class="font-bold uppercase tracking-[0.3em] text-[10px] text-slate-300">SUMI - Brubar Brasil Tech © 2026</p>
+    <footer class="py-24 text-center">
+        <img src="iconesumi.png" class="h-10 mx-auto mb-6 opacity-20 grayscale" alt="Footer Logo">
+        <p class="font-bold uppercase tracking-[0.5em] text-[10px] text-slate-300">SUMI Intelligence © 2026</p>
     </footer>
 
     <script>
@@ -95,7 +95,7 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('btnSubmit');
-            btn.innerHTML = "PROCESSANDO...";
+            btn.innerHTML = "INICIANDO...";
             const formData = new FormData(form);
             await fetch('https://formspree.io/f/xvzwwlgr', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
             window.location.href = "https://pay.kiwify.com.br/K3y9LSh";
