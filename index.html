@@ -3,89 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUMI | Seu e-mail vira um zap</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>SUMI | você sabe. antes.</title>
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            /* Troque URL_DA_SUA_IMAGEM_DO_IATE pela imagem real */
-            background-image: url('https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=2560'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #fff; overflow-x: hidden; display: flex; justify-content: center; }
+        
+        .main-container {
+            position: relative;
+            width: 100%;
+            max-width: 1280px; /* Mantém a proporção de elite */
+            margin: 0 auto;
         }
-        .gradient-text { 
-            background: linear-gradient(90deg, #FFFFFF, #E0E7FF); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+
+        .arte-final {
+            width: 100%;
+            height: auto;
+            display: block;
         }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        /* O BOTÃO "COMECE AGORA" - Ajustado para ficar sobre o celular */
+        .btn-comecar {
+            position: absolute;
+            top: 78%; /* Ajuste fino para a posição vertical */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translateX(-50%); /* Garante o centro exato */
+            width: 220px;
+            height: 55px;
+            background: #007AFF; /* Azul Royal Apple */
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            font-family: -apple-system, sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 10px 20px rgba(0,102,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-comecar:hover {
+            background: #0056b3;
+            transform: translateX(-50%) scale(1.05);
         }
     </style>
 </head>
-<body class="text-white">
+<body>
 
-    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/10">
-        <div class="flex justify-center padding: 30px 0;">
-            <img src="logonova.png" alt="SUMI Logo" class="h-32 width: auto;" onerror="this.src='https://via.placeholder.com/160x160?text=LOGO+AQUI'">
-        </div>
-    </nav>
-
-    <section class="min-h-screen pt-72 flex flex-col items-center justify-center text-center px-6 relative">
-        <div class="absolute inset-0 bg-black/30 z-0"></div>
-
-        <div class="relative z-10 max-w-5xl">
-            <p class="text-2xl font-extrabold text-indigo-200 uppercase mb-3 tracking-widest">A VIDA É CURTA DEMAIS PARA LER E-MAILS.</p>
-            <h1 class="text-6xl md:text-8xl font-black gradient-text uppercase tracking-tighter leading-none mb-6">Recupere seu tempo.<br>Curta a jornada.</h1>
-            <p class="text-xl text-white/80 max-w-3xl mx-auto mb-12">Enquanto você decide o próximo rumo, a SUMI transforma seu inbox em mensagens diretas no WhatsApp. Eficiência de elite para quem comanda.</p>
-            
-            <a href="https://wa.me/5519997469744?text=Quero%20ativar%20a%20minha%20SUMI" class="inline-block bg-white text-indigo-950 px-16 py-6 rounded-2xl font-black text-2xl uppercase shadow-2xl hover:bg-indigo-100 transition-all transform hover:scale-105">
-                Ativar Minha SUMI
-            </a>
-        </div>
-    </section>
-
-    <section class="py-24 relative z-10">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-black gradient-text uppercase mb-16">Escolha seu Nível de Comando</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="glass-panel p-12 rounded-[2rem] text-left border border-white/10 relative overflow-hidden">
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl"></div>
-                    <p class="text-sm font-bold text-indigo-200 uppercase">Plano</p>
-                    <h3 class="text-4xl font-black mb-1">Standard</h3>
-                    <p class="text-white/60 mb-6">Filtro Essencial</p>
-                    <p class="text-5xl font-black mb-12">R$ 19,<span class="text-3xl">90/mês</span></p>
-                    <ul class="space-y-4 text-lg text-white/80 mb-12">
-                        <li>• Resumo de 1 conta de e-mail</li>
-                        <li>• Entrega 2x por dia no Zap</li>
-                        <li>• Suporte via Ticket</li>
-                    </ul>
-                    <a href="https://wa.me/5519997469744?text=Quero%20o%20Plano%20Standard" class="block w-full text-center bg-white/10 text-white py-4 rounded-xl font-bold hover:bg-white/20">Assinar Standard</a>
-                </div>
-
-                <div class="bg-indigo-600/20 backdrop-blur-md p-12 rounded-[2rem] text-left border-2 border-indigo-400 relative overflow-hidden">
-                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
-                    <p class="text-sm font-bold text-indigo-200 uppercase">Plano</p>
-                    <h3 class="text-4xl font-black mb-1">Premium Black</h3>
-                    <p class="text-white/60 mb-6">Controle Total</p>
-                    <p class="text-5xl font-black mb-12">R$ 29,<span class="text-3xl">90/mês</span></p>
-                    <ul class="space-y-4 text-lg text-white/80 mb-12 font-semibold">
-                        <li>• Resumo de até 3 contas</li>
-                        <li>• Entrega em tempo real</li>
-                        <li>• Alertas de e-mails urgentes</li>
-                        <li>• Suporte VIP via WhatsApp</li>
-                    </ul>
-                    <a href="https://wa.me/5519997469744?text=Quero%20o%20Plano%20Premium%20Black" class="block w-full text-center bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 shadow-lg">Assinar Premium Black</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="main-container">
+        <img src="arte-final.png" class="arte-final" alt="SUMI Intelligence">
+        
+        <a href="https://wa.me/seunumeroaqui" class="btn-comecar">COMECE AGORA</a>
+    </div>
 
 </body>
 </html>
