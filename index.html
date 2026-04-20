@@ -6,59 +6,60 @@
     <title>SUMI | você sabe. antes.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+        body { background-color: #ffffff; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        /* A SEÇÃO HERO USA A SUA ARTE COMO FUNDO REAL */
-        .hero-final {
-            background-image: url('arte-final.png');
-            background-size: contain;
-            background-position: center top;
-            background-repeat: no-repeat;
+        .hero-container {
             width: 100%;
-            aspect-ratio: 1920 / 1080; /* Mantém a proporção da sua arte */
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
         }
+        .main-art {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-        /* Botão azul sobreposto à imagem */
-        .btn-posicao {
+        .btn-overlay {
             position: absolute;
-            top: 52%; /* Ajustado para ficar sobre o 'você sabe' da imagem */
-            left: 23%;
+            top: 55%; 
+            left: 22%;
             transform: translate(-50%, -50%);
         }
 
         @media (max-width: 1024px) {
-            .hero-final { background-size: cover; aspect-ratio: auto; min-height: 60vh; }
-            .btn-posicao { position: relative; top: 0; left: 0; transform: none; text-align: center; padding: 40px 0; }
+            .btn-overlay { position: static; transform: none; text-align: center; padding: 30px 0; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero-final">
-        <div class="btn-posicao">
-            <a href="#planos" class="bg-[#007AFF] text-white px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest shadow-lg hover:scale-105 transition-all inline-block">
+    <section class="hero-container">
+        <img src="arte-final.png" alt="SUMI" class="main-art">
+        <div class="btn-overlay">
+            <a href="#planos" class="bg-[#007AFF] text-white px-10 py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-2xl hover:scale-105 transition-all inline-block">
                 COMECE AGORA
             </a>
         </div>
     </section>
 
-    <section id="planos" class="py-20 bg-white">
+    <section id="planos" class="py-24 bg-white">
         <div class="max-w-5xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-10">
                 
-                <div class="p-10 rounded-[2.5rem] border-2 border-gray-100 text-center flex flex-col items-center">
-                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Plano Standard</span>
-                    <div class="text-5xl font-black mb-8">R$ 19,90<span class="text-sm font-normal text-gray-300">/mês</span></div>
-                    <a href="https://buy.stripe.com/test_fZe6qY0mZ6oF97G000" class="w-full bg-black text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition">
+                <div class="p-12 rounded-[3rem] border-2 border-gray-100 text-center flex flex-col items-center hover:border-black transition-all">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Standard</span>
+                    <div class="text-5xl font-black mb-8 text-black">R$ 19,90<span class="text-sm font-normal text-gray-300">/mês</span></div>
+                    <a href="https://buy.stripe.com/14AaEZ5VfffIccJ30yaR202" class="w-full bg-black text-white py-4 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition">
                         ASSINAR AGORA
                     </a>
                 </div>
 
-                <div class="p-10 rounded-[2.5rem] bg-black text-white text-center flex flex-col items-center shadow-2xl">
+                <div class="p-12 rounded-[3rem] bg-black text-white text-center flex flex-col items-center shadow-2xl scale-105 border-2 border-black">
                     <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Premium Black</span>
-                    <div class="text-5xl font-black mb-8">R$ 29,90<span class="text-sm font-normal text-gray-600">/mês</span></div>
-                    <a href="https://buy.stripe.com/test_cN28z61r300hb9S001" class="w-full bg-blue-600 text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-500 transition">
+                    <div class="text-5xl font-black mb-8 text-white">R$ 29,90<span class="text-sm font-normal text-gray-600">/mês</span></div>
+                    <a href="https://buy.stripe.com/aFacN71EZ6Jc2C9bh0aR203" class="w-full bg-blue-600 text-white py-4 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-500 transition">
                         ASSINAR PREMIUM
                     </a>
                 </div>
@@ -67,7 +68,7 @@
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-300 text-[10px] tracking-[0.3em]">
+    <footer class="py-16 text-center text-gray-300 text-[9px] tracking-[0.5em]">
         @ BRUBAR TECH 2026
     </footer>
 
