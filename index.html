@@ -6,93 +6,104 @@
     <title>SUMI | você sabe. antes.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-        body { background-color: #ffffff; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; width: 100vw; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        body { background-color: #ffffff; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        /* MENU FIXO E AMPLO */
-        nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); width: 100%; }
-
-        /* CONTAINER DA ARTE: FORÇANDO LARGURA TOTAL */
+        /* CONTAINER DA ARTE (SITE EM TELA CHEIA) */
         .hero-container {
             width: 100%;
-            max-width: 100%; /* Ocupa tudo para não ficar reduzido */
             position: relative;
-            display: flex;
-            justify-content: center;
+            display: block;
         }
         
-        .hero-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 1440px; /* Limite de segurança para artes em 4K não estourarem */
-        }
-
         .main-art {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* AJUSTE DE MIRA MILIMÉTRICO DO BOTÃO NO IPHONE */
-        .btn-overlay {
-            position: absolute;
-            top: 67%; /* Subi o botão para entrar no visor do iPhone da esquerda */
-            left: 22.8%;
-            transform: translate(-50%, -50%);
-            width: 11%; /* Proporção ideal para o visor */
-            min-width: 130px;
-        }
+        /* LINKS INVISÍVEIS (MAPEAMENTO CIRÚRGICO) */
+        .click-map { position: absolute; cursor: pointer; z-index: 20; }
+        
+        /* Ajuste para bater no 'Como Funciona' e 'Planos' que já estão na sua imagem */
+        .link-como-funciona { top: 4%; left: 78%; width: 10%; height: 5%; }
+        .link-planos-topo { top: 4%; left: 88%; width: 8%; height: 5%; }
+        
+        /* Ajuste para bater exatamente no botão verde 'Começar agora' */
+        .link-comecar { top: 72%; left: 80%; width: 14%; height: 8%; }
 
-        @media (max-width: 768px) {
-            .btn-overlay { position: static; transform: none; margin: 20px auto; width: 80%; }
+        @media (max-width: 1024px) {
+            .click-map { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 top-0 border-b border-gray-100">
-        <div class="max-w-[1440px] mx-auto px-10 py-6 flex justify-between items-center">
-            <div class="flex items-center">
-                <span class="text-2xl font-[900] tracking-tighter">SUMI</span>
-            </div>
-            <div class="hidden md:flex space-x-12 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
-                <a href="#como-funciona" class="hover:text-black transition">COMO FUNCIONA</a>
-                <a href="#planos" class="hover:text-black transition">PLANOS</a>
-            </div>
-            <a href="#planos" class="bg-black text-white px-10 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gray-800 transition">
-                ASSINAR
-            </a>
-        </div>
-    </nav>
+    <section class="hero-container">
+        <img src="arte-final.png" alt="SUMI" class="main-art">
+        
+        <a href="#como-funciona" class="click-map link-como-funciona"></a>
+        <a href="#planos" class="click-map link-planos-topo"></a>
+        <a href="#planos" class="click-map link-comecar"></a>
+    </section>
 
-    <section id="como-funciona" class="hero-container pt-24">
-        <div class="hero-wrapper">
-            <img src="arte-final.png" alt="SUMI" class="main-art">
-            
-            <div class="btn-overlay">
-                <a href="#planos" class="bg-[#007AFF] text-white w-full py-3 rounded-xl font-bold text-[9px] uppercase tracking-[0.15em] shadow-2xl hover:scale-105 transition-all inline-block text-center">
-                    COMECE AGORA
-                </a>
+    <section id="como-funciona" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-8">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl font-[900] tracking-tighter uppercase mb-6">A Inteligência por trás da SUMI</h2>
+                <div class="grid md:grid-cols-3 gap-12 mt-16 text-left">
+                    <div>
+                        <div class="text-black font-black text-2xl mb-4">01.</div>
+                        <h4 class="font-bold mb-2 text-black uppercase tracking-tight">Curadoria de IA</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Nossa tecnologia separa o ruído do sinal. A SUMI identifica o que é oportunidade de negócio e o que é apenas distração.</p>
+                    </div>
+                    <div>
+                        <div class="text-black font-black text-2xl mb-4">02.</div>
+                        <h4 class="font-bold mb-2 text-black uppercase tracking-tight">Síntese Executiva</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Transformamos e-mails densos em notificações de WhatsApp curtas e acionáveis. A informação chega pronta para sua decisão.</p>
+                    </div>
+                    <div>
+                        <div class="text-black font-black text-2xl mb-4">03.</div>
+                        <h4 class="font-bold mb-2 text-black uppercase tracking-tight">Velocidade de Resposta</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Responda direto do Zap. Converta clientes antes da concorrência e mantenha sua caixa de entrada zerada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-black text-white rounded-[3.5rem] p-12 md:p-20 shadow-2xl overflow-hidden relative">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-[900] tracking-tighter uppercase mb-8">Segurança de Nível Bancário</h2>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <p class="text-gray-400 leading-relaxed">
+                            A SUMI processa seus dados de forma efêmera. Uma vez gerado o resumo para o seu WhatsApp, os dados originais são <strong>permanentemente descartados</strong> dos nossos servidores.
+                        </p>
+                        <ul class="space-y-4 text-sm font-medium">
+                            <li class="flex items-center gap-3"><span class="text-green-500 text-xl">🛡️</span> Criptografia AES-256</li>
+                            <li class="flex items-center gap-3"><span class="text-green-500 text-xl">🔒</span> Zero Armazenamento de Mensagens</li>
+                            <li class="flex items-center gap-3"><span class="text-green-500 text-xl">⚡</span> Conexão Oficial Google & Microsoft</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="planos" class="py-32 bg-white">
-        <div class="max-w-[1200px] mx-auto px-8">
+    <section id="planos" class="py-32 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 
-                <div class="p-14 rounded-[4rem] border-2 border-gray-100 text-center flex flex-col items-center hover:border-black transition-all">
+                <div class="p-12 rounded-[3.5rem] bg-white border border-gray-100 text-center flex flex-col items-center shadow-sm hover:border-black transition-all">
                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6">Standard</span>
                     <div class="text-6xl font-[900] mb-12 tracking-tighter">R$ 19,90<span class="text-sm font-normal text-gray-300">/mês</span></div>
-                    <a href="https://buy.stripe.com/14AaEZ5VfffIccJ30yaR202" target="_blank" class="w-full bg-black text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition shadow-xl">
+                    <a href="https://buy.stripe.com/14AaEZ5VfffIccJ30yaR202" target="_blank" class="w-full bg-black text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition">
                         ASSINAR AGORA
                     </a>
                 </div>
 
-                <div class="p-14 rounded-[4rem] bg-black text-white text-center flex flex-col items-center shadow-2xl scale-105 border-2 border-black">
+                <div class="p-12 rounded-[3.5rem] bg-black text-white text-center flex flex-col items-center shadow-2xl scale-105">
                     <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-6">Premium Black</span>
-                    <div class="text-6xl font-[900] mb-12 tracking-tighter">R$ 29,90<span class="text-sm font-normal text-gray-600">/mês</span></div>
-                    <a href="https://buy.stripe.com/aFacN71EZ6Jc2C9bh0aR203" target="_blank" class="w-full bg-blue-600 text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-500 transition shadow-xl">
+                    <div class="text-6xl font-[900] mb-12 tracking-tighter text-white">R$ 29,90<span class="text-sm font-normal text-gray-600">/mês</span></div>
+                    <a href="https://buy.stripe.com/aFacN71EZ6Jc2C9bh0aR203" target="_blank" class="w-full bg-blue-600 text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-500 transition">
                         ASSINAR PREMIUM
                     </a>
                 </div>
@@ -101,8 +112,8 @@
         </div>
     </section>
 
-    <footer class="py-24 text-center text-gray-300 text-[10px] tracking-[0.5em] border-t border-gray-50">
-        @ BRUBAR TECH 2026
+    <footer class="py-20 text-center text-gray-300 text-[9px] tracking-[0.5em] border-t border-gray-50">
+        @ BRUBAR TECH 2026 | TODOS OS DIREITOS RESERVADOS
     </footer>
 
 </body>
