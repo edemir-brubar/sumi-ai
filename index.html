@@ -5,56 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUMI | você sabe. antes.</title>
     <style>
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #fff; overflow-x: hidden; display: flex; justify-content: center; }
+        /* Reset de bordas e preenchimento total */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        .main-container {
+        body, html { 
+            width: 100%; 
+            height: 100%; 
+            background: #ffffff; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            scroll-behavior: smooth;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* MENU SUPERIOR ESTILO APPLE */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px); /* Efeito translúcido */
+            border-bottom: 0.5px solid rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1d1d1f;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #007AFF; }
+
+        /* SEÇÃO DE ENTRADA (TELA CHEIA) */
+        .sessao-topo {
             position: relative;
-            width: 100%;
-            max-width: 1280px; /* Mantém a proporção de elite */
-            margin: 0 auto;
+            width: 100vw; 
+            height: 100vh;
+            background: url('arte-final.png') no-repeat center center;
+            background-size: cover; /* Faz a imagem ocupar tudo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .arte-final {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* O BOTÃO "COMECE AGORA" - Ajustado para ficar sobre o celular */
-        .btn-comecar {
+        .botao-principal {
             position: absolute;
-            top: 78%; /* Ajuste fino para a posição vertical */
-            left: 50%; /* Centraliza horizontalmente */
-            transform: translateX(-50%); /* Garante o centro exato */
-            width: 220px;
-            height: 55px;
-            background: #007AFF; /* Azul Royal Apple */
+            bottom: 12%; /* Posicionado sobre a base do iPhone */
+            width: 240px;
+            height: 60px;
+            background: #007AFF;
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 30px;
-            font-family: -apple-system, sans-serif;
             font-weight: bold;
             font-size: 18px;
-            box-shadow: 0 10px 20px rgba(0,102,255,0.3);
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,102,255,0.4);
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        .btn-comecar:hover {
-            background: #0056b3;
-            transform: translateX(-50%) scale(1.05);
+        .botao-principal:hover { transform: scale(1.05); background: #0056b3; }
+
+        /* SEÇÃO COMO FUNCIONA */
+        .secao-texto {
+            padding: 120px 10%;
+            background: #f5f5f7;
+            text-align: center;
+        }
+
+        .secao-texto h2 { font-size: 36px; margin-bottom: 25px; letter-spacing: -1px; }
+        .secao-texto p { font-size: 20px; line-height: 1.6; color: #424245; max-width: 750px; margin: 0 auto; }
+
+        /* SEÇÃO PLANOS */
+        .secao-planos {
+            padding: 100px 5% 150px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            border: 1px solid #d2d2d7;
+            border-radius: 24px;
+            padding: 50px 40px;
+            width: 320px;
+            transition: 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover { border-color: #007AFF; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        .card h3 { font-size: 26px; margin-bottom: 10px; }
+        .card .preco { font-size: 42px; font-weight: bold; margin-bottom: 5px; }
+        .card .periodo { font-size: 14px; color: #86868b; margin-bottom: 30px; }
+        
+        .card ul { list-style: none; margin-bottom: 40px; text-align: left; color: #424245; }
+        .card ul li { margin-bottom: 12px; font-size: 16px; }
+        .card ul li::before { content: "✓ "; color: #007AFF; font-weight: bold; }
+
+        .btn-checkout {
+            text-decoration: none;
+            background: #1d1d1f;
+            color: white;
+            padding: 18px;
+            border-radius: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-checkout:hover { background: #007AFF; }
+
+        /* DESTAQUE PREMIUM */
+        .premium { border: 2px solid #007AFF; position: relative; }
+        .tag-popular { 
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: #007AFF; color: white; padding: 6px 18px; border-radius: 20px; font-size: 12px; font-weight: bold;
+        }
+
+        /* AJUSTE PARA CELULARES */
+        @media (max-width: 768px) {
+            .sessao-topo { background-size: cover; background-position: center; }
+            .botao-principal { bottom: 10%; width: 200px; height: 50px; font-size: 16px; }
+            nav { justify-content: center; padding: 15px; gap: 15px; }
+            .secao-texto h2 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <img src="arte-final.png" class="arte-final" alt="SUMI Intelligence">
-        
-        <a href="https://wa.me/seunumeroaqui" class="btn-comecar">COMECE AGORA</a>
+    <nav>
+        <a href="#como-funciona">COMO FUNCIONA</a>
+        <a href="#planos">PLANOS</a>
+    </nav>
+
+    <div class="sessao-topo">
+        <a href="#planos" class="botao-principal">COMECE AGORA</a>
     </div>
+
+    <section id="como-funciona" class="secao-texto">
+        <h2>Simplicidade é a nossa inteligência.</h2>
+        <p>
+            Usar a <strong>SUMI</strong> é prático e direto: você não precisa de novos aplicativos. 
+            Basta escolher seu plano e começar a receber seus resumos estratégicos diretamente onde a sua atenção já está. 
+            Informação refinada, entregue sem esforço.
+        </p>
+    </section>
+
+    <section id="planos" class="secao-planos">
+        <h2>Escolha seu nível de acesso.</h2>
+        <div class="cards-container">
+            
+            <div class="card">
+                <div>
+                    <h3>Standard</h3>
+                    <p class="preco">R$ 19,90</p>
+                    <p class="periodo">por mês</p>
+                    <ul>
+                        <li>Resumos Diários</li>
+                        <li>Principais Notícias</li>
+                        <li>Acesso via E-mail</li>
+                    </ul>
+                </div>
+                <a href="COLE_AQUI_O_LINK_DO_CHECKOUT_STANDARD" class="btn-checkout">Assinar Standard</a>
+            </div>
+
+            <div class="card premium">
+                <div class="tag-popular">MAIS ESCOLHIDO</div>
+                <div>
+                    <h3>Premium</h3>
+                    <p class="preco">R$ 29,90</p>
+                    <p class="periodo">por mês</p>
+                    <ul>
+                        <li>Tudo do Standard</li>
+                        <li>Análises Profundas</li>
+                        <li>Insights Exclusivos</li>
+                        <li>Suporte Prioritário</li>
+                    </ul>
+                </div>
+                <a href="COLE_AQUI_O_LINK_DO_CHECKOUT_PREMIUM" class="btn-checkout">Assinar Premium</a>
+            </div>
+
+        </div>
+    </section>
 
 </body>
 </html>
