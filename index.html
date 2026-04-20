@@ -6,44 +6,40 @@
     <title>SUMI | você sabe. antes.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; margin: 0; }
+        body { background-color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; }
         
-        /* EXIBE A SUA ARTE ORIGINAL COMO PEÇA CENTRAL */
-        .main-art {
+        /* A SEÇÃO HERO USA A SUA ARTE COMO FUNDO REAL */
+        .hero-final {
+            background-image: url('arte-final.png');
+            background-size: contain;
+            background-position: center top;
+            background-repeat: no-repeat;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: block;
-        }
-        .hero-container {
+            aspect-ratio: 1920 / 1080; /* Mantém a proporção da sua arte */
             position: relative;
-            background-color: #ffffff;
-            padding-top: 60px;
         }
-        /* Botão posicionado sobre a arte para desktop */
-        .btn-overlay {
+
+        /* Botão azul sobreposto à imagem */
+        .btn-posicao {
             position: absolute;
-            top: 55%;
-            left: 20%;
+            top: 52%; /* Ajustado para ficar sobre o 'você sabe' da imagem */
+            left: 23%;
             transform: translate(-50%, -50%);
         }
+
         @media (max-width: 1024px) {
-            .btn-overlay { position: static; transform: none; text-align: center; padding: 20px 0; }
+            .hero-final { background-size: cover; aspect-ratio: auto; min-height: 60vh; }
+            .btn-posicao { position: relative; top: 0; left: 0; transform: none; text-align: center; padding: 40px 0; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero-container">
-        <div class="relative max-w-7xl mx-auto">
-            <img src="arte-final.png" alt="SUMI Arte Final" class="main-art">
-            
-            <div class="btn-overlay">
-                <a href="#planos" class="bg-[#007AFF] text-white px-10 py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-xl hover:bg-blue-600 transition-all inline-block">
-                    COMECE AGORA
-                </a>
-            </div>
+    <section class="hero-final">
+        <div class="btn-posicao">
+            <a href="#planos" class="bg-[#007AFF] text-white px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest shadow-lg hover:scale-105 transition-all inline-block">
+                COMECE AGORA
+            </a>
         </div>
     </section>
 
@@ -51,24 +47,28 @@
         <div class="max-w-5xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-10">
                 
-                <div class="p-10 rounded-[3rem] border-2 border-gray-100 text-center flex flex-col items-center">
-                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Standard</span>
+                <div class="p-10 rounded-[2.5rem] border-2 border-gray-100 text-center flex flex-col items-center">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Plano Standard</span>
                     <div class="text-5xl font-black mb-8">R$ 19,90<span class="text-sm font-normal text-gray-300">/mês</span></div>
-                    <a href="https://buy.stripe.com/test_fZe6qY0mZ6oF97G000" class="w-full py-4 rounded-full border-2 border-black font-bold text-[10px] uppercase tracking-widest hover:bg-black hover:text-white transition">ASSINAR</a>
+                    <a href="https://buy.stripe.com/test_fZe6qY0mZ6oF97G000" class="w-full bg-black text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-gray-800 transition">
+                        ASSINAR AGORA
+                    </a>
                 </div>
 
-                <div class="p-10 rounded-[3rem] bg-black text-white text-center flex flex-col items-center shadow-2xl">
+                <div class="p-10 rounded-[2.5rem] bg-black text-white text-center flex flex-col items-center shadow-2xl">
                     <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-4">Premium Black</span>
                     <div class="text-5xl font-black mb-8">R$ 29,90<span class="text-sm font-normal text-gray-600">/mês</span></div>
-                    <a href="https://buy.stripe.com/test_cN28z61r300hb9S001" class="w-full py-4 rounded-full bg-white text-black font-bold text-[10px] uppercase tracking-widest hover:bg-gray-200 transition">ASSINAR PREMIUM</a>
+                    <a href="https://buy.stripe.com/test_cN28z61r300hb9S001" class="w-full bg-blue-600 text-white py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-500 transition">
+                        ASSINAR PREMIUM
+                    </a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center">
-        <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.5em]">@ BRUBAR TECH 2026</p>
+    <footer class="py-10 text-center text-gray-300 text-[10px] tracking-[0.3em]">
+        @ BRUBAR TECH 2026
     </footer>
 
 </body>
