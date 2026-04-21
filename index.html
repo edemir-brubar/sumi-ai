@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
         body { background-color: #ffffff; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; width: 100%; }
         
-        /* GARANTE QUE A IMAGEM APAREÇA */
+        /* CONTAINER DA PÁGINA PRINCIPAL */
         .hero-container { 
             width: 100%; 
             position: relative; 
@@ -20,13 +20,13 @@
         .hero-wrapper { position: relative; width: 100%; max-width: 1920px; }
         .main-art { width: 100%; height: auto; display: block; }
 
-        /* MAPEAMENTO DE CLIQUES (COISAS INVISÍVEIS) */
+        /* MAPEAMENTO DE CLIQUES INVISÍVEIS */
         .click-map { position: absolute; cursor: pointer; z-index: 20; }
         
-        /* Mira no botão "COMEÇAR AGORA" da tua imagem */
+        /* Coordenadas para o botão "COMEÇAR AGORA" no iPhone */
         .link-comecar { top: 69%; left: 74%; width: 18%; height: 10%; }
         
-        /* Links do menu no topo da imagem */
+        /* Links para o menu no topo */
         .link-como-funciona { top: 3%; left: 70%; width: 12%; height: 5%; }
         .link-planos-topo { top: 3%; left: 87%; width: 8%; height: 5%; }
 
@@ -46,12 +46,24 @@
     </section>
 
     <section id="como-funciona" class="py-24 bg-white border-b border-gray-50">
-        <div class="max-w-5xl mx-auto px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-[900] tracking-tighter uppercase mb-6">Privacidade de Nível Executivo</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                    A SUMI processa os teus e-mails e <strong>descarta os dados imediatamente</strong>. Não guardamos nada. Tudo passa por criptografia AES-256 via APIs Oficiais.
-                </p>
+        <div class="max-w-5xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-[900] tracking-tighter uppercase mb-6">Privacidade de Nível Executivo</h2>
+            <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-12">
+                A SUMI processa os teus e-mails e <strong>descarta os dados imediatamente</strong> após o envio. Não guardamos nada. Tudo 100% criptografado.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 text-left mt-10">
+                <div class="p-6 border border-gray-100 rounded-2xl">
+                    <h4 class="font-bold text-blue-600 mb-2 uppercase text-xs">🛡️ AES-256</h4>
+                    <p class="text-sm text-gray-400">Segurança de nível bancário em todas as transações.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-2xl">
+                    <h4 class="font-bold text-blue-600 mb-2 uppercase text-xs">🔒 Zero Logs</h4>
+                    <p class="text-sm text-gray-400">O conteúdo das tuas mensagens nunca fica gravado nos nossos servidores.</p>
+                </div>
+                <div class="p-6 border border-gray-100 rounded-2xl">
+                    <h4 class="font-bold text-blue-600 mb-2 uppercase text-xs">⚡ API Oficial</h4>
+                    <p class="text-sm text-gray-400">Conexão direta e segura com Google e Microsoft.</p>
+                </div>
             </div>
         </div>
     </section>
