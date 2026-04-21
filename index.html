@@ -9,92 +9,49 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
         body { background-color: #ffffff; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; width: 100%; }
         
-        /* CONTAINER HERO - TELA CHEIA */
-        .hero-container {
-            width: 100%;
-            position: relative;
-            display: flex;
-            justify-content: center;
+        /* GARANTE QUE A IMAGEM APAREÇA */
+        .hero-container { 
+            width: 100%; 
+            position: relative; 
+            display: flex; 
+            justify-content: center; 
             background-color: #ffffff;
         }
-        
-        .hero-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 1920px;
-        }
+        .hero-wrapper { position: relative; width: 100%; max-width: 1920px; }
+        .main-art { width: 100%; height: auto; display: block; }
 
-        .main-art {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* MAPEAMENTO DE CLIQUES INVISÍVEIS */
+        /* MAPEAMENTO DE CLIQUES (COISAS INVISÍVEIS) */
         .click-map { position: absolute; cursor: pointer; z-index: 20; }
         
-        /* Ajuste para os textos de menu no topo da sua imagem */
+        /* Mira no botão "COMEÇAR AGORA" da tua imagem */
+        .link-comecar { top: 69%; left: 74%; width: 18%; height: 10%; }
+        
+        /* Links do menu no topo da imagem */
         .link-como-funciona { top: 3%; left: 70%; width: 12%; height: 5%; }
         .link-planos-topo { top: 3%; left: 87%; width: 8%; height: 5%; }
-        
-        /* MIRA NO NOVO BOTÃO PRETO 'COMEÇAR AGORA' */
-        .link-comecar { 
-            top: 69%; 
-            left: 74%; 
-            width: 18%; 
-            height: 10%; 
-        }
 
-        @media (max-width: 1024px) {
-            .click-map { display: none; }
-        }
+        @media (max-width: 1024px) { .click-map { display: none; } }
     </style>
 </head>
 <body>
 
     <section class="hero-container">
-        <img src="arte-final.jpg" alt="SUMI" class="main-art">
-        
-        <a href="#como-funciona" class="click-map link-como-funciona"></a>
-        <a href="#planos" class="click-map link-planos-topo"></a>
-        <a href="#planos" class="click-map link-comecar"></a>
+        <div class="hero-wrapper">
+            <img src="image_74d963.png" alt="SUMI PRINCIPAL" class="main-art">
+            
+            <a href="#como-funciona" class="click-map link-como-funciona"></a>
+            <a href="#planos" class="click-map link-planos-topo"></a>
+            <a href="#planos" class="click-map link-comecar"></a>
+        </div>
     </section>
 
-    <section id="como-funciona" class="py-24 bg-white">
+    <section id="como-funciona" class="py-24 bg-white border-b border-gray-50">
         <div class="max-w-5xl mx-auto px-8">
-            <div class="text-center mb-24">
-                <h2 class="text-4xl font-[900] tracking-tighter uppercase mb-6 text-black">Inteligência sem fricção</h2>
-                <div class="grid md:grid-cols-3 gap-12 mt-16 text-left">
-                    <div>
-                        <div class="text-black font-black text-2xl mb-4">01.</div>
-                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-blue-600">Sinal vs Ruído</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Nossa IA filtra o que é cobrança, oportunidade ou urgência, ignorando o resto.</p>
-                    </div>
-                    <div>
-                        <div class="text-black font-black text-2xl mb-4">02.</div>
-                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-blue-600">Resumo Flash</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">O conteúdo do e-mail vira um resumo executivo de 3 linhas no seu WhatsApp.</p>
-                    </div>
-                    <div>
-                        <div class="text-black font-black text-2xl mb-4">03.</div>
-                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-blue-600">Faturamento</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Responda na hora e feche negócios antes da concorrência sequer abrir o computador.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-black text-white rounded-[3.5rem] p-12 md:p-20 shadow-2xl relative">
-                <h2 class="text-3xl font-[900] tracking-tighter uppercase mb-10">Privacidade de Nível Executivo</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-start">
-                    <p class="text-gray-400 leading-relaxed">
-                        A SUMI processa seus e-mails em tempo real e <strong>descarta os dados imediatamente</strong> após o envio para o WhatsApp. Não treinamos modelos públicos com suas informações.
-                    </p>
-                    <ul class="space-y-4 text-sm">
-                        <li class="flex items-center gap-3"><span class="text-green-500">🛡️</span> Criptografia de Ponta (AES-256)</li>
-                        <li class="flex items-center gap-3"><span class="text-green-500">🔒</span> Zero Armazenamento Permanente</li>
-                        <li class="flex items-center gap-3"><span class="text-green-500">⚡</span> Conexão via APIs Oficiais Seguras</li>
-                    </ul>
-                </div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-[900] tracking-tighter uppercase mb-6">Privacidade de Nível Executivo</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    A SUMI processa os teus e-mails e <strong>descarta os dados imediatamente</strong>. Não guardamos nada. Tudo passa por criptografia AES-256 via APIs Oficiais.
+                </p>
             </div>
         </div>
     </section>
@@ -103,29 +60,23 @@
         <div class="max-w-5xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 
-                <div class="p-12 rounded-[3.5rem] bg-white border border-gray-100 text-center flex flex-col items-center hover:border-black transition-all shadow-sm">
-                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6">Standard</span>
-                    <div class="text-6xl font-[900] mb-12 tracking-tighter">R$ 19,90<span class="text-sm font-normal text-gray-300">/mês</span></div>
-                    <a href="https://buy.stripe.com/14AaEZ5VfffIccJ30yaR202" target="_blank" class="w-full bg-black text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition">
-                        ASSINAR AGORA
-                    </a>
+                <div class="p-12 rounded-[3rem] bg-white border border-gray-100 text-center shadow-sm">
+                    <span class="text-[10px] font-bold text-gray-400 uppercase mb-6">Standard</span>
+                    <div class="text-6xl font-[900] mb-12">R$ 19,90<span class="text-sm font-normal text-gray-300">/mês</span></div>
+                    <a href="https://buy.stripe.com/14AaEZ5VfffIccJ3OyaR202" target="_blank" class="w-full bg-black text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest block hover:bg-gray-800 transition">ASSINAR AGORA</a>
                 </div>
 
-                <div class="p-12 rounded-[3.5rem] bg-black text-white text-center flex flex-col items-center shadow-2xl scale-105">
-                    <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-6">Premium Black</span>
-                    <div class="text-6xl font-[900] mb-12 tracking-tighter text-white">R$ 29,90<span class="text-sm font-normal text-gray-600">/mês</span></div>
-                    <a href="https://buy.stripe.com/aFacN71EZ6Jc2C9bh0aR203" target="_blank" class="w-full bg-blue-600 text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-500 transition">
-                        ASSINAR PREMIUM
-                    </a>
+                <div class="p-12 rounded-[3rem] bg-black text-white text-center shadow-2xl scale-105">
+                    <span class="text-[10px] font-bold text-blue-500 uppercase mb-6">Premium Black</span>
+                    <div class="text-6xl font-[900] mb-12">R$ 29,90<span class="text-sm font-normal text-gray-600">/mês</span></div>
+                    <a href="https://buy.stripe.com/aFacN71EZ6Jc2C9bh0aR203" target="_blank" class="w-full bg-blue-600 text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest block hover:bg-blue-500 transition">ASSINAR PREMIUM</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center text-gray-300 text-[9px] tracking-[0.5em]">
-        @ BRUBAR TECH 2026 | SUMI INTELLIGENCE
-    </footer>
+    <footer class="py-20 text-center text-gray-300 text-[9px] tracking-[0.5em]">@ BRUBAR TECH 2026</footer>
 
 </body>
 </html>
