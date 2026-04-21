@@ -7,30 +7,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
-        body { background-color: #ffffff; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { background-color: #ffffff; margin: 0; padding: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; width: 100%; }
         
-        /* CONTAINER DA ARTE (SITE EM TELA CHEIA) */
+        /* CONTAINER HERO - TELA CHEIA */
         .hero-container {
             width: 100%;
             position: relative;
-            display: block;
+            display: flex;
+            justify-content: center;
+            background-color: #ffffff;
         }
         
+        .hero-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1920px;
+        }
+
         .main-art {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* LINKS INVISÍVEIS (MAPEAMENTO CIRÚRGICO) */
+        /* MAPEAMENTO DE CLIQUES INVISÍVEIS */
         .click-map { position: absolute; cursor: pointer; z-index: 20; }
         
-        /* Ajuste para bater no 'Como Funciona' e 'Planos' que já estão na sua imagem */
-        .link-como-funciona { top: 4%; left: 78%; width: 10%; height: 5%; }
-        .link-planos-topo { top: 4%; left: 88%; width: 8%; height: 5%; }
+        /* Ajuste para os textos de menu no topo da sua imagem */
+        .link-como-funciona { top: 3%; left: 70%; width: 12%; height: 5%; }
+        .link-planos-topo { top: 3%; left: 87%; width: 8%; height: 5%; }
         
-        /* Ajuste para bater exatamente no botão verde 'Começar agora' */
-        .link-comecar { top: 72%; left: 80%; width: 14%; height: 8%; }
+        /* MIRA NO NOVO BOTÃO PRETO 'COMEÇAR AGORA' */
+        .link-comecar { 
+            top: 69%; 
+            left: 74%; 
+            width: 18%; 
+            height: 10%; 
+        }
 
         @media (max-width: 1024px) {
             .click-map { display: none; }
@@ -40,7 +53,7 @@
 <body>
 
     <section class="hero-container">
-        <img src="arte-final.png" alt="SUMI" class="main-art">
+        <img src="arte-final.jpg" alt="SUMI" class="main-art">
         
         <a href="#como-funciona" class="click-map link-como-funciona"></a>
         <a href="#planos" class="click-map link-planos-topo"></a>
@@ -50,39 +63,37 @@
     <section id="como-funciona" class="py-24 bg-white">
         <div class="max-w-5xl mx-auto px-8">
             <div class="text-center mb-24">
-                <h2 class="text-4xl font-[900] tracking-tighter uppercase mb-6">A Inteligência por trás da SUMI</h2>
+                <h2 class="text-4xl font-[900] tracking-tighter uppercase mb-6 text-black">Inteligência sem fricção</h2>
                 <div class="grid md:grid-cols-3 gap-12 mt-16 text-left">
                     <div>
                         <div class="text-black font-black text-2xl mb-4">01.</div>
-                        <h4 class="font-bold mb-2 text-black uppercase tracking-tight">Curadoria de IA</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Nossa tecnologia separa o ruído do sinal. A SUMI identifica o que é oportunidade de negócio e o que é apenas distração.</p>
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-blue-600">Sinal vs Ruído</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Nossa IA filtra o que é cobrança, oportunidade ou urgência, ignorando o resto.</p>
                     </div>
                     <div>
                         <div class="text-black font-black text-2xl mb-4">02.</div>
-                        <h4 class="font-bold mb-2 text-black uppercase tracking-tight">Síntese Executiva</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Transformamos e-mails densos em notificações de WhatsApp curtas e acionáveis. A informação chega pronta para sua decisão.</p>
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-blue-600">Resumo Flash</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">O conteúdo do e-mail vira um resumo executivo de 3 linhas no seu WhatsApp.</p>
                     </div>
                     <div>
                         <div class="text-black font-black text-2xl mb-4">03.</div>
-                        <h4 class="font-bold mb-2 text-black uppercase tracking-tight">Velocidade de Resposta</h4>
-                        <p class="text-sm text-gray-500 leading-relaxed">Responda direto do Zap. Converta clientes antes da concorrência e mantenha sua caixa de entrada zerada.</p>
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest text-blue-600">Faturamento</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Responda na hora e feche negócios antes da concorrência sequer abrir o computador.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-black text-white rounded-[3.5rem] p-12 md:p-20 shadow-2xl overflow-hidden relative">
-                <div class="relative z-10">
-                    <h2 class="text-3xl font-[900] tracking-tighter uppercase mb-8">Segurança de Nível Bancário</h2>
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <p class="text-gray-400 leading-relaxed">
-                            A SUMI processa seus dados de forma efêmera. Uma vez gerado o resumo para o seu WhatsApp, os dados originais são <strong>permanentemente descartados</strong> dos nossos servidores.
-                        </p>
-                        <ul class="space-y-4 text-sm font-medium">
-                            <li class="flex items-center gap-3"><span class="text-green-500 text-xl">🛡️</span> Criptografia AES-256</li>
-                            <li class="flex items-center gap-3"><span class="text-green-500 text-xl">🔒</span> Zero Armazenamento de Mensagens</li>
-                            <li class="flex items-center gap-3"><span class="text-green-500 text-xl">⚡</span> Conexão Oficial Google & Microsoft</li>
-                        </ul>
-                    </div>
+            <div class="bg-black text-white rounded-[3.5rem] p-12 md:p-20 shadow-2xl relative">
+                <h2 class="text-3xl font-[900] tracking-tighter uppercase mb-10">Privacidade de Nível Executivo</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <p class="text-gray-400 leading-relaxed">
+                        A SUMI processa seus e-mails em tempo real e <strong>descarta os dados imediatamente</strong> após o envio para o WhatsApp. Não treinamos modelos públicos com suas informações.
+                    </p>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3"><span class="text-green-500">🛡️</span> Criptografia de Ponta (AES-256)</li>
+                        <li class="flex items-center gap-3"><span class="text-green-500">🔒</span> Zero Armazenamento Permanente</li>
+                        <li class="flex items-center gap-3"><span class="text-green-500">⚡</span> Conexão via APIs Oficiais Seguras</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -92,7 +103,7 @@
         <div class="max-w-5xl mx-auto px-8">
             <div class="grid md:grid-cols-2 gap-12">
                 
-                <div class="p-12 rounded-[3.5rem] bg-white border border-gray-100 text-center flex flex-col items-center shadow-sm hover:border-black transition-all">
+                <div class="p-12 rounded-[3.5rem] bg-white border border-gray-100 text-center flex flex-col items-center hover:border-black transition-all shadow-sm">
                     <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6">Standard</span>
                     <div class="text-6xl font-[900] mb-12 tracking-tighter">R$ 19,90<span class="text-sm font-normal text-gray-300">/mês</span></div>
                     <a href="https://buy.stripe.com/14AaEZ5VfffIccJ30yaR202" target="_blank" class="w-full bg-black text-white py-5 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-gray-800 transition">
@@ -112,8 +123,8 @@
         </div>
     </section>
 
-    <footer class="py-20 text-center text-gray-300 text-[9px] tracking-[0.5em] border-t border-gray-50">
-        @ BRUBAR TECH 2026 | TODOS OS DIREITOS RESERVADOS
+    <footer class="py-20 text-center text-gray-300 text-[9px] tracking-[0.5em]">
+        @ BRUBAR TECH 2026 | SUMI INTELLIGENCE
     </footer>
 
 </body>
